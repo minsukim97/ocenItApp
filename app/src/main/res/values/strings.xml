@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">해양IT융합기술연구소</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="nav_item_Introduce">소개</string>
+    <string name="nav_item_Member">멤버</string>
+    <string name="nav_item_Research_Field">연구분야</string>
+    <string name="nav_item_Research_achievement">연구성과</string>
+    <string name="nav_item_question">문의 게시판</string>
+    <string name="drawer_header_text">해양it융합기술연구소</string>
+
+    <string name="second_activity_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur diam id aliquam scelerisque. Donec ultrices lacus vel dignissim pharetra. Vivamus pharetra augue quis rhoncus placerat. Sed ultricies at risus non cursus. Nam rutrum leo nec placerat consectetur. Vestibulum feugiat eleifend diam, nec interdum augue tincidunt sit amet. Praesent feugiat est auctor lacus consectetur, vitae pellentesque dolor laoreet.</string>
+    <string name="title_activity_second">SecondActivity</string>
+</resources>

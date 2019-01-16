@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_Introduce"
+            android:checked="true"
+            android:title="@string/nav_item_Introduce" />
+        <item
+            android:id="@+id/navigation_item_Member"
+            android:title="@string/nav_item_Member" />
+        <item
+            android:id="@+id/navigation_item_Research_Field"
+            android:title="@string/nav_item_Research_Field" />
+
+        <item
+            android:id="@+id/navigation_item_Progress_task"
+            android:title="-진행과제" />
+
+        <item
+            android:id="@+id/navigation_item_Completion_task"
+            android:title="-완료과제" />
+
+        <item
+
+            android:id="@+id/nav_item_Research_achievement"
+            android:title="@string/nav_item_Research_achievement" />
+        <item
+
+            android:id="@+id/nav_item_question"
+            android:title="@string/nav_item_question" />
+    </group>
+
+</menu>

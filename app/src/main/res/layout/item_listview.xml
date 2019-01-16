@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="0.2"
+                android:id="@+id/tv_task_category"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="과제분류"/>
+
+            <TextView
+                android:layout_weight="0.2"
+                android:id="@+id/tv_task_name"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="과제명" />
+
+            <TextView
+                android:layout_weight="0.2"
+                android:id="@+id/tv_research_period"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="연구기간" />
+
+            <TextView
+                android:layout_weight="0.2"
+                android:id="@+id/tv_support"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="지원기간" />
+
+            <TextView
+                android:layout_weight="0.2"
+                android:id="@+id/tv_research_director"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:text="연구책임자" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
