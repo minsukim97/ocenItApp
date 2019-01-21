@@ -15,7 +15,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_weight="0.2"
+                android:layout_weight="0.05"
                 android:id="@+id/tv_task_category"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
@@ -33,7 +33,25 @@
                 android:text="과제명" />
 
             <TextView
-                android:layout_weight="0.2"
+                android:layout_weight="0.15"
+                android:id="@+id/tv_research_belong"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="연구기간" />
+
+            <TextView
+                android:layout_weight="0.15"
+                android:id="@+id/tv_research_period"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="지원기관" />
+
+            <TextView
+                android:layout_weight="0.05"
                 android:id="@+id/tv_research_director"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"

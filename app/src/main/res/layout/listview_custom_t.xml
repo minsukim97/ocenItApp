@@ -15,31 +15,31 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_weight="0.2"
-                android:id="@+id/tv_task_category"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:text="과제분류"/>
-
-            <TextView
                 android:layout_weight="0.6"
-                android:id="@+id/tv_task_name"
+                android:id="@+id/tv_KOR_tName"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="과제명" />
+                android:text="논문이름"/>
 
             <TextView
                 android:layout_weight="0.2"
-                android:id="@+id/tv_research_director"
+                android:id="@+id/tv_author"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="연구책임자" />
+                android:text="참여자" />
+
+            <TextView
+                android:layout_weight="0.2"
+                android:id="@+id/tv_t_date"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="날짜" />
 
 
         </LinearLayout>

@@ -18,6 +18,87 @@
                 android:background="?attr/colorPrimary"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
+            <LinearLayout
+                android:id="@+id/tv_research_lL1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/toolbar"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_weight="0.05"
+                        android:layout_width="50dp"
+                        android:background="#0000FF"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center_horizontal"
+                        android:textColor="#FFFFFF"
+                        android:text="과제\n분류"/>
+
+                    <TextView
+                        android:layout_weight="0.6"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:background="#0000FF"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center_horizontal"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#FFFFFF"
+                        android:text="과제명" />
+
+                    <TextView
+                        android:layout_weight="0.15"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="#0000FF"
+                        android:gravity="center_horizontal"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginRight="5dp"
+                        android:text="연구기간" />
+
+                    <TextView
+                        android:layout_weight="0.15"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="#0000FF"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center_horizontal"
+                        android:text="지원기관" />
+
+                    <TextView
+                        android:layout_weight="0.05"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="#0000FF"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center_horizontal"
+                        android:text="연구\n책임자" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line1"
+                android:layout_below="@id/tv_research_lL1"
+                android:background="#808080"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_height="5px"/>
+
             <ProgressBar
                 android:id="@+id/progressbar"
                 android:layout_width="match_parent"
@@ -26,11 +107,12 @@
 
             <!--ListView를 정의한다.-->
             <ListView
-                android:id="@+id/listview"
+                android:id="@+id/listview_r"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
                 android:layout_above="@+id/progressbar"
-                android:layout_below="@id/toolbar"
+                android:layout_below="@id/line1"
                 />
         </RelativeLayout>
 
