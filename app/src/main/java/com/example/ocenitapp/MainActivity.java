@@ -98,18 +98,15 @@ public class MainActivity extends AppCompatActivity{
                         Intent member_intent = new Intent(MainActivity.this, Member.class);
                         startActivity(member_intent);
                         break;
-
-                    case R.id.navigation_item_Research_Field:
-                        Intent research_field_intent = new Intent(MainActivity.this, Research_Field.class);
-                        startActivity(research_field_intent);
-                        break;
-
+                        
                     case R.id.navigation_item_Progress_task:
-                        Toast.makeText(MainActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
+                        Intent research_progress_task_intent = new Intent(MainActivity.this, Progresstask.class);
+                        startActivity(research_progress_task_intent);
                         break;
 
                     case R.id.navigation_item_Completion_task:
-                        Toast.makeText(MainActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
+                        Intent research_completaion_taskk_intent = new Intent(MainActivity.this, Research_Field.class);
+                        startActivity(research_completaion_taskk_intent);
                         break;
 
                     case R.id.nav_item_Research_achievement:

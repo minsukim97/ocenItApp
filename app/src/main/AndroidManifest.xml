@@ -30,6 +30,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Research_Field"
             android:screenOrientation="portrait"/>
+        <activity android:name=".Progresstask"
+            android:screenOrientation="portrait"/>
         <activity android:name=".test"
             android:screenOrientation="portrait"/>
     </application>

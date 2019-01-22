@@ -40,7 +40,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Research_Field extends AppCompatActivity implements AbsListView.OnScrollListener{
+public class Progresstask extends AppCompatActivity implements AbsListView.OnScrollListener{
     android.support.v7.widget.Toolbar toolbar;
     ActionBar actionBar;
     DrawerLayout drawer;
@@ -53,20 +53,21 @@ public class Research_Field extends AppCompatActivity implements AbsListView.OnS
     private final int OFFSET = 5;                  // 한 페이지마다 로드할 데이터 갯수.
     private ProgressBar progressBar;                // 데이터 로딩중을 표시할 프로그레스바
     private boolean mLockListView = false;          // 데이터 불러올때 중복안되게 하기위한 변수
-    MyAdapter_c mMyAdapter;
+    MyAdapter_p mMyAdapter;
     phpdo task;
     ArrayList<String> c_classify = new ArrayList<String>();
     ArrayList<String> KORName = new ArrayList<String>();
-    ArrayList<String> f_belong = new ArrayList<String>();
-    ArrayList<String> f_period = new ArrayList<String>();
+    ArrayList<String> c_belong = new ArrayList<String>();
+    ArrayList<String> c_period = new ArrayList<String>();
     ArrayList<String> c_charge = new ArrayList<String>();
     ListView mListView;
+
     int length = 0;
     static  int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_research_field_main);
+        setContentView(R.layout.activity_progresstask_main);
 
         isPlayingThread();
         task = new phpdo();
@@ -90,23 +91,23 @@ public class Research_Field extends AppCompatActivity implements AbsListView.OnS
                 int id = menuItem.getItemId();
                 switch (id) {
                     case R.id.navigation_Introduce:
-                        Toast.makeText(Research_Field.this, "같은 메뉴 입니다.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Progresstask.this, "같은 메뉴 입니다.", Toast.LENGTH_LONG).show();
                         break;
 
                     case R.id.navigation_item_Member:
-                        Toast.makeText(Research_Field.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Progresstask.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
                         break;
 
                     case R.id.navigation_item_Research_Field:
-                        Toast.makeText(Research_Field.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Progresstask.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
                         break;
 
                     case R.id.nav_item_Research_achievement:
-                        Toast.makeText(Research_Field.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Progresstask.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
                         break;
 
                     case R.id.nav_item_question:
-                        Toast.makeText(Research_Field.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Progresstask.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
                         break;
 
                 }
@@ -115,12 +116,12 @@ public class Research_Field extends AppCompatActivity implements AbsListView.OnS
             }
         });
 
-        listView = (ListView) findViewById(R.id.listview_r);
+        listView = (ListView) findViewById(R.id.listview_r1);
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
 
         list = new ArrayList<String>();
 
-        mMyAdapter = new MyAdapter_c();
+        mMyAdapter = new MyAdapter_p();
         listView.setAdapter(mMyAdapter);
 
         progressBar.setVisibility(View.GONE);
@@ -200,7 +201,7 @@ public class Research_Field extends AppCompatActivity implements AbsListView.OnS
                 if(count == length){
                     continue;
                 }
-                mMyAdapter.addItem(c_classify.get(count), KORName.get(count), f_belong.get(count), f_period.get(count), c_charge.get(count));
+                mMyAdapter.addItem(c_classify.get(count), KORName.get(count), c_belong.get(count), c_period.get(count), c_charge.get(count));
                 count++;
 
             }
@@ -233,7 +234,7 @@ public class Research_Field extends AppCompatActivity implements AbsListView.OnS
         @Override
         protected String doInBackground(String... arg0) {
             try {
-                String link = "http://210.119.107.82/html/graph/completedtask.php";
+                String link = "http://210.119.107.82/html/graph/progresstask.php";
                 URL url = new URL(link);
 
                 HttpClient client = new DefaultHttpClient();
@@ -274,20 +275,20 @@ public class Research_Field extends AppCompatActivity implements AbsListView.OnS
                 //json 형식으로 넘어온 것에서 키값이 title, content로 나눠서 어레이리스트에 저장
                 for (int i = 0; i < length; i++) {
                     JSONObject temp = results.getJSONObject(i);
-                    c_classify.add(temp.getString("f_classify"));
+                    c_classify.add(temp.getString("c_classify"));
                     //Log.e("classify",c_classify.toString());
-                    KORName.add(temp.getString("f_KORName"));
+                    KORName.add(temp.getString("KORName"));
                     //Log.e("KORName",KORName.toString());
-                    f_belong.add(temp.getString("f_belong"));
+                    c_belong.add(temp.getString("c_belong"));
                     //Log.e("classify",f_belong.toString());
-                    f_period.add(temp.getString("f_period"));
+                    c_period.add(temp.getString("c_period"));
                     //Log.e("classify",f_period.toString());
-                    c_charge.add(temp.getString("f_charge"));
+                    c_charge.add(temp.getString("c_charge"));
                     //Log.e("classify",c_charge.toString());
                 }
 
                 for (int i=0; i<5; i++) {
-                    mMyAdapter.addItem(c_classify.get(count), KORName.get(count), f_belong.get(count), f_period.get(count), c_charge.get(count));
+                    mMyAdapter.addItem(c_classify.get(count), KORName.get(count), c_belong.get(count), c_period.get(count), c_charge.get(count));
                     count++;
                 }
                 getItem();
@@ -301,7 +302,7 @@ public class Research_Field extends AppCompatActivity implements AbsListView.OnS
                 e.printStackTrace(new PrintWriter(sw));
                 String exceptionAsStrting = sw.toString();
                 Log.e("GODK", exceptionAsStrting);
-                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Research_Field.this);
+                android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(Progresstask.this);
                 builder.setTitle("Database Connection Error");
                 builder.setMessage("데이터가 없습니다.");
                 builder.setNeutralButton("닫기", null);

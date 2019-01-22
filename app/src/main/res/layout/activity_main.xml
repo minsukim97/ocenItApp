@@ -70,7 +70,7 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:layout_below="@id/recyclerview"
-                android:text="연구성과"/>
+                android:text="연구완료"/>
 
             <ListView
                 android:id="@+id/listView"
