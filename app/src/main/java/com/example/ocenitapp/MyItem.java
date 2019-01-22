@@ -20,6 +20,52 @@ public class MyItem {
     private String kind;
     private String f_belong;
     private String f_period;
+    private String p_KORName;
+    private String p_Num;
+    private String inventor;
+    private String p_Date;
+
+    public String getp_Date() {
+        return p_Date;
+    }
+
+    public void setp_Date(String p_Date) { this.p_Date = p_Date; }
+
+    public String getinventor() {
+        return inventor;
+    }
+
+    public void setinventor(String inventor) { this.inventor = inventor; }
+
+    public String getp_Num() {
+        return p_Num;
+    }
+
+    public void setp_Num(String p_Num) { this.p_Num = p_Num; }
+
+    public String getp_KORName() {
+        return p_KORName;
+    }
+
+    public void setp_KORName(String p_KORName) { this.p_KORName = p_KORName; }
+
+    public String getnation() {
+        return nation;
+    }
+
+    public void setnation(String nation) { this.nation = nation; }
+
+    public String gettname() {
+        return t_name;
+    }
+
+    public void settname(String t_name) { this.t_name = t_name; }
+
+    public String getkind() {
+        return kind;
+    }
+
+    public void setkind(String kind) { this.kind = kind; }
 
     public String getfperiod() {
         return f_period;

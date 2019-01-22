@@ -32,6 +32,10 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Progresstask"
             android:screenOrientation="portrait"/>
+        <activity android:name=".Thesis"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Patent"
+            android:screenOrientation="portrait"/>
         <activity android:name=".test"
             android:screenOrientation="portrait"/>
     </application>

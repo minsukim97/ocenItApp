@@ -22,9 +22,16 @@
             android:title="-완료과제" />
 
         <item
-
             android:id="@+id/nav_item_Research_achievement"
             android:title="@string/nav_item_Research_achievement" />
+
+        <item
+            android:id="@+id/navigation_item_thesis"
+            android:title="-논문" />
+
+        <item
+            android:id="@+id/navigation_item_patent"
+            android:title="-특허" />
         <item
 
             android:id="@+id/nav_item_question"

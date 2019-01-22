@@ -98,20 +98,25 @@ public class MainActivity extends AppCompatActivity{
                         Intent member_intent = new Intent(MainActivity.this, Member.class);
                         startActivity(member_intent);
                         break;
-                        
+
                     case R.id.navigation_item_Progress_task:
                         Intent research_progress_task_intent = new Intent(MainActivity.this, Progresstask.class);
                         startActivity(research_progress_task_intent);
                         break;
 
                     case R.id.navigation_item_Completion_task:
-                        Intent research_completaion_taskk_intent = new Intent(MainActivity.this, Research_Field.class);
-                        startActivity(research_completaion_taskk_intent);
+                        Intent research_completaion_task_intent = new Intent(MainActivity.this, Research_Field.class);
+                        startActivity(research_completaion_task_intent);
                         break;
 
-                    case R.id.nav_item_Research_achievement:
-                        Intent test = new Intent(MainActivity.this, test.class);
-                        startActivity(test);
+                    case R.id.navigation_item_thesis:
+                        Intent thesis_intent = new Intent(MainActivity.this, Thesis.class);
+                        startActivity(thesis_intent);
+                        break;
+
+                    case R.id.navigation_item_patent:
+                        Intent patent_intent = new Intent(MainActivity.this, Patent.class);
+                        startActivity(patent_intent);
                         break;
 
                     case R.id.nav_item_question:
