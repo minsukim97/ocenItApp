@@ -56,9 +56,8 @@ public class MainActivity extends AppCompatActivity{
     ArrayList<String> author = new ArrayList<String>();
     ArrayList<String> t_date = new ArrayList<String>();
 
-
-
     final int ITEM_SIZE = 5;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,7 +119,8 @@ public class MainActivity extends AppCompatActivity{
                         break;
 
                     case R.id.nav_item_question:
-                        Toast.makeText(MainActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
+                        Intent question_intent = new Intent(MainActivity.this, Question.class);
+                        startActivity(question_intent);
                         break;
 
                 }

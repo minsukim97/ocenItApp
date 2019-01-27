@@ -36,6 +36,10 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Patent"
             android:screenOrientation="portrait"/>
+        <activity android:name=".Question"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Write_question"
+            android:screenOrientation="portrait"/>
         <activity android:name=".test"
             android:screenOrientation="portrait"/>
     </application>
