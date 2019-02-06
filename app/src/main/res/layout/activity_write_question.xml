@@ -41,6 +41,7 @@
                     android:text="제목"/>
 
                 <EditText
+                    android:id="@+id/et_title"
                     android:layout_weight="0.9"
                     android:hint="제목을 입력해주세요."
                     android:layout_width="wrap_content"
@@ -75,6 +76,7 @@
                     android:text="작성자"/>
 
                 <EditText
+                    android:id="@+id/et_writer"
                     android:layout_weight="0.9"
                     android:hint="작성자를 입력해 주세요."
                     android:layout_width="wrap_content"
@@ -89,7 +91,7 @@
         <LinearLayout
             android:id="@+id/tv_research_lL3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="480dp"
             android:layout_below="@id/tv_research_lL2"
             android:orientation="vertical">
 
@@ -110,7 +112,8 @@
                     android:text="내용"/>
 
                 <EditText
-                    android:layout_weight="0.9"
+                    android:id="@+id/et_in"
+                    android:layout_weight="0.8"
                     android:hint="내용을 입력 해주세요."
                     android:layout_width="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -120,6 +123,28 @@
                     android:inputType="text|textMultiLine"
                     android:minLines="3"
                     android:layout_height="match_parent" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tv_research_lL4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tv_research_lL3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="글쓰기"/>
 
             </LinearLayout>
         </LinearLayout>

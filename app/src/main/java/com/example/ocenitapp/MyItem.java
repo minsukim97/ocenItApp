@@ -24,6 +24,27 @@ public class MyItem {
     private String p_Num;
     private String inventor;
     private String p_Date;
+    private String q_title;
+    private String q_writer;
+    private String q_date;
+
+    public String getq_writer() {
+        return q_writer;
+    }
+
+    public void setq_writer(String q_writer) { this.q_writer = q_writer; }
+
+    public String getq_date() {
+        return q_date;
+    }
+
+    public void setq_date(String q_date) { this.q_date = q_date; }
+
+    public String getq_title() {
+        return q_title;
+    }
+
+    public void setq_title(String q_title) { this.q_title = q_title; }
 
     public String getp_Date() {
         return p_Date;

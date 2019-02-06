@@ -1,5 +1,6 @@
 package com.example.ocenitapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -55,14 +56,12 @@ public class Question extends AppCompatActivity implements AbsListView.OnScrollL
     private final int OFFSET = 5;                  // 한 페이지마다 로드할 데이터 갯수.
     private ProgressBar progressBar;                // 데이터 로딩중을 표시할 프로그레스바
     private boolean mLockListView = false;          // 데이터 불러올때 중복안되게 하기위한 변수
-    MyAdapter_p mMyAdapter;
+    MyAdapter_q mMyAdapter;
     Button button1;
     phpdo task;
-    ArrayList<String> c_classify = new ArrayList<String>();
-    ArrayList<String> KORName = new ArrayList<String>();
-    ArrayList<String> c_belong = new ArrayList<String>();
-    ArrayList<String> c_period = new ArrayList<String>();
-    ArrayList<String> c_charge = new ArrayList<String>();
+    ArrayList<String> q_title = new ArrayList<String>();
+    ArrayList<String> q_writer = new ArrayList<String>();
+    ArrayList<String> q_date = new ArrayList<String>();
     ListView mListView;
 
     int length = 0;
@@ -71,6 +70,8 @@ public class Question extends AppCompatActivity implements AbsListView.OnScrollL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quesion_main);
+
+        count = 0;
 
         isPlayingThread();
         task = new phpdo();
@@ -124,7 +125,7 @@ public class Question extends AppCompatActivity implements AbsListView.OnScrollL
 
         list = new ArrayList<String>();
 
-        mMyAdapter = new MyAdapter_p();
+        mMyAdapter = new MyAdapter_q();
         listView.setAdapter(mMyAdapter);
 
         progressBar.setVisibility(View.GONE);
@@ -205,7 +206,7 @@ public class Question extends AppCompatActivity implements AbsListView.OnScrollL
         for(int i = 0; i < 5; i++){
             if(count >= length)
             {
-                mMyAdapter.addItem("-", "-", "-", "-", "-");
+                mMyAdapter.addItem("-", "-", "-");
                 count++;
             }
             else if(count < length)
@@ -213,7 +214,7 @@ public class Question extends AppCompatActivity implements AbsListView.OnScrollL
                 if(count == length){
                     continue;
                 }
-                mMyAdapter.addItem(c_classify.get(count), KORName.get(count), c_belong.get(count), c_period.get(count), c_charge.get(count));
+                mMyAdapter.addItem(q_title.get(count), q_writer.get(count), q_date.get(count));
                 count++;
 
             }
@@ -246,7 +247,7 @@ public class Question extends AppCompatActivity implements AbsListView.OnScrollL
         @Override
         protected String doInBackground(String... arg0) {
             try {
-                String link = "http://210.119.107.82/html/graph/progresstask.php";
+                String link = "http://210.119.107.82/html/graph/question.php";
                 URL url = new URL(link);
 
                 HttpClient client = new DefaultHttpClient();
@@ -287,20 +288,16 @@ public class Question extends AppCompatActivity implements AbsListView.OnScrollL
                 //json 형식으로 넘어온 것에서 키값이 title, content로 나눠서 어레이리스트에 저장
                 for (int i = 0; i < length; i++) {
                     JSONObject temp = results.getJSONObject(i);
-                    c_classify.add(temp.getString("c_classify"));
-                    //Log.e("classify",c_classify.toString());
-                    KORName.add(temp.getString("KORName"));
-                    //Log.e("KORName",KORName.toString());
-                    c_belong.add(temp.getString("c_belong"));
-                    //Log.e("classify",f_belong.toString());
-                    c_period.add(temp.getString("c_period"));
-                    //Log.e("classify",f_period.toString());
-                    c_charge.add(temp.getString("c_charge"));
-                    //Log.e("classify",c_charge.toString());
+                    q_title.add(temp.getString("Title"));
+                    //Log.e("classify",q_title.toString());
+                    q_writer.add(temp.getString("Writer"));
+                    //Log.e("KORName",q_writer.toString());
+                    q_date.add(temp.getString("Date"));
+                    //Log.e("classify",q_date.toString());
                 }
 
-                for (int i=0; i<5; i++) {
-                    mMyAdapter.addItem(c_classify.get(count), KORName.get(count), c_belong.get(count), c_period.get(count), c_charge.get(count));
+                for (int i=0; i<2; i++) {
+                    mMyAdapter.addItem(q_title.get(count), q_writer.get(count), q_date.get(count));
                     count++;
                 }
                 getItem();
